@@ -10,8 +10,7 @@ from selene import browser
 @pytest.fixture(params=[(1920, 1080), (1680, 1050), (375, 667), (390, 844)],
                 ids=['desktop', 'desktop', 'mobile', 'mobile'])
 def browsers(request):
-    chrome_options = webdriver.ChromeOptions()
-    browser.config.driver_options = chrome_options
+    browser.config.driver_options = webdriver.ChromeOptions()
     browser.config.window_height = request.param[1]
     browser.config.window_width = request.param[0]
 
